@@ -7,7 +7,7 @@
 ```js
 ### *Di Vps/Termux
 
-git clone https://github.com/balxz/restapii.riooxdzz
+git clone https://github.com/rioowho/restapii.riooxdzz
 cd restapii.riooxdzz 
 npm i
 node . 
