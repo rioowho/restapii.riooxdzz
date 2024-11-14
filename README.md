@@ -7,8 +7,8 @@
 ```js
 ### *Di Vps/Termux
 
-git clone https://github.com/balxz/simple-apiBase
-cd simple-apiBase 
+git clone https://github.com/balxz/restapii.riooxdzz
+cd restapii.riooxdzz 
 npm i
 node . 
 npm start
