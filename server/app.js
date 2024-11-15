@@ -45,7 +45,7 @@ app.get("/profile", limit, isAuthenticated, (req, res) => {
 })
 
 app.get("/docs", limit, isAuthenticated, (req, res) => {
-res.sendFile(path.join(__dirname, "../declaration/rateLimit.jsx"))
+
   res.render('index', {
     email,
     password,
