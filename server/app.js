@@ -44,6 +44,16 @@ app.get("/profile", limit, isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/profile.html"))
 })
 
+app.get('/docs', limit, isAuthenticated, async(req, res) => {
+  let getkey = await limit(req.user.id)
+  let { apikey, username, limit} = getkey
+  res.render('index', {
+    apikey,
+    username,
+    limit,
+    layout: 'index'
+  });
+})
 /* = ENDPOINT FITURE = */
 app.post('/register', (req, res) => {
     require("../declaration/register.jsx")(req, res)
