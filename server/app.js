@@ -45,11 +45,10 @@ app.get("/profile", limit, isAuthenticated, (req, res) => {
 })
 
 app.get('/docs', limit, isAuthenticated, (req, res) => {
-  let getkey = await limit(req.user.id)
-  let { apikey, username, limit } = getkey
+res.sendFile(path.join(__dirname, "../declaration/rateLimit.jsx"))
   res.render('index', {
-    apikey,
-    username,
+    email,
+    password,
     limit,
     layout: 'index'
   });
