@@ -17,7 +17,7 @@ app.use(checkBanned)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({
-    secret: 'komtolllll',
+    secret: 'secret',
     resave: false,
     saveUninitialized: true,
     cookie: { maxAge: 3600000 } 
@@ -44,9 +44,9 @@ app.get("/profile", limit, isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/profile.html"))
 })
 
-app.get('/docs', limit, isAuthenticated, async(req, res) => {
+app.get('/docs', limit, isAuthenticated, (req, res) => {
   let getkey = await limit(req.user.id)
-  let { apikey, username, limit} = getkey
+  let { apikey, username, limit } = getkey
   res.render('index', {
     apikey,
     username,
